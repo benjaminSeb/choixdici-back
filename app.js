@@ -2,8 +2,11 @@ const express = require("express");
 const authRoutes = require("./routes/auth");
 const structureRoutes = require("./routes/structure");
 const eventRoutes = require("./routes/event");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
 
 app.use((req, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
